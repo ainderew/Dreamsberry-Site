@@ -1,0 +1,154 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+.siteNavBar{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end ;
+
+    
+    #header-nav{
+        display: flex;
+        color: white;
+        width: 100%;
+        align-items: center ;
+        #nav-logo{
+            flex: 1;
+            margin-left: 7rem;
+           
+            // background: green;
+            // display: flex;
+            // justify-content: space-around;
+        }
+        #nav-ul{
+            display: flex;
+            list-style-type: none;
+            flex: 1;
+            justify-content: space-evenly;
+            margin-right: 6rem;
+            // background: red;
+            .nav-li{
+                // padding:0 1rem;
+                z-index: 1;
+                .nav-li-link{
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    position: relative;
+                    transition: all 300ms ease
+                }
+                .nav-li-link::before{
+                    content: "";
+                    position: absolute;
+                    bottom: -55%;
+                    left: -30%;
+                    background: #de7119;
+                    height: 250%;
+                    width: 0%;
+                    transition: 300ms ease;
+                    z-index:-1;
+                    
+                    
+                }
+                .nav-li-link:hover::before{
+                    width: 160%;
+                }
+            }
+        }
+        #nav-btn{
+            border: none;
+            background: #de7119;
+            width: 10rem;
+            height: 9rem;
+            color: white;
+            font-size: 1.2rem;
+            
+        }
+    }
+
+}
+#burger-btn{
+    width: 2rem;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    z-index: 1;
+
+}
+
+#phoneNavBar{
+    width: 50%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 3fr 1fr;
+
+    .phoneNav-Logo-Container{
+        grid-row:1/2 ;
+        background: blue;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        #phoneNav-Logo{
+            font-size: 1rem;
+            color: white;
+        }
+    }
+    .phoneNav-Nav{
+        background: green;
+    }
+}
+.mainContainer{
+    width: 100vw;
+    height: 100%;
+    background: url(../img/kalanggamanBG.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.mainContainer::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 12%, rgba(0,0,0,0.804359243697479) 50%, rgba(0,212,255,0) 100%);
+    animation: opacity 700ms ease-in;
+}
+@keyframes opacity{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.section1{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    // .left-sec1{
+        
+    // }
+}
+
+@media screen and (max-width: 1020px){
+    .siteNavBar{
+        display: none;
+    }
+}
