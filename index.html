@@ -10,18 +10,6 @@
 <body>
  
     <div class="mainContainer">
-        <header class = "siteNavBar">
-            <nav id="header-nav">
-                <h1 id="nav-logo">DreamsBerry</h1>
-                <ul id="nav-ul">
-                    <li class="nav-li"><a class="nav-li-link" href="">Home</a></li>
-                    <li class="nav-li"><a class="nav-li-link" href="">Contact us</a></li>
-                    <li class="nav-li"><a class="nav-li-link" href="">About</a></li>
-                    <li class="nav-li"><a class="nav-li-link" href="">Blog</a></li>
-                </ul>
-                <button id="nav-btn">Reserve Now</button>
-            </nav>
-        </header>
         <img id="burger-btn" src="./img/burger.svg" alt="">
         <header id=phoneNavBar>
             <div class="phoneNav-Logo-Container">
@@ -40,16 +28,47 @@
     
             </div>
         </header>
-       <div class="filter"></div>
         <section class="section1">
-            <div class="left-sec1">
-                <div class="header-sec1">
+            <header class = "siteNavBar">
+                <nav id="header-nav">
+                    <h1 id="nav-logo">DreamsBerry</h1>
+                    <ul id="nav-ul">
+                        <li class="nav-li"><a class="nav-li-link" href="">Home</a></li>
+                        <li class="nav-li"><a class="nav-li-link" href="">Contact us</a></li>
+                        <li class="nav-li"><a class="nav-li-link" href="">About</a></li>
+                        <li class="nav-li"><a class="nav-li-link" href="">Blog</a></li>
+                    </ul>
+                    <button id="nav-btn">Reserve Now</button>
+                </nav>
+            </header>
+            <div class="scroller">
 
+            </div>
+            <div class="section1-carousel">
+                <button class="carousel-btn-cont carousel-up-btn">
+                    <img class="carousel-btn" src="./img/upArrow.svg" alt="">
+                </button>
+                <ul class="carousel-track">
+                    <li class="carousel-slide">
+                        <div class="carousel-img img1"></div>
+                    </li>
+                    <li class="carousel-slide">
+                        <div class="carousel-img img2"></div>
+                    </li>
+                </ul>
+                <button class="carousel-btn-cont carousel-dowm-btn">
+                    <img class="carousel-btn" src="./img/downArrow.svg" alt="">
+                </button>
+
+                <div class="carousel-nav">
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
                 </div>
             </div>
-            <div class="right-sec1">
-
-            </div>
+        </section>
+        <section class="section2">
+            <h1>asdf</h1>
         </section>
     </div>
     <script src="./js/index.js"></script>
