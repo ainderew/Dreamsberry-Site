@@ -13,11 +13,13 @@
     --dark-main-color: #dd2c00;
     --light-second-color: #b2ebf2;
     --dark-second-color: #00bcd4;
+    --dark-font-color: rgb(49, 49, 49);
 }
 
 body{
     width: 100vw;
     height: 100vh;
+    color: var(--dark-font-color);
 }
 
 #burger-btn{
@@ -83,22 +85,13 @@ body{
         }
     }
 }
-.mainContainerMenu{
-    width: 100vw;
-    height: 100%;
-    background: url(../img/kalanggamanBG.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;   
-}
+
 .mainContainer{
     width: 100vw;
     height: 100%;
     position: relative;
     overflow-x: hidden;
+
 }
 // .filter{
 //     position: absolute;
@@ -188,7 +181,8 @@ body{
             }
             #nav-btn{
                 border: none;
-                background: var(--light-second-color);
+                // background: var(--light-second-color);
+                background: white;
                 width: 13rem;
                 height: 6rem;
                 color: black;
@@ -202,32 +196,79 @@ body{
     .section1-carousel{
     //    border: 1px red solid; 
       width: 100%;
-      height: 100%;
+      height: 85%;
       position:relative;
       .carousel-btn-cont{
         background: none;
         border: none;
         position: absolute;
+        
       }
       .carousel-btn{
-        width: 1rem;
-        height: 1rem;
+        width: 2rem;
+        height: 2rem;
       }
-    //   #carousel-up-btn{
-          
-    //   }
+      .carousel-down-btn,
+      .carousel-up-btn{
+        position: absolute;
+        right: 10%;
+        transform: translateX(50%);
+        outline: none;
+      }
+      .carousel-up-btn{
+        bottom: 40%;
+      }
+      .carousel-down-btn{
+          bottom: 35%;
+      }
+      .carousel-nav{
+        //   background: pink;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          position: absolute;
+          right: 10%;
+          bottom: 50%;
+          height: 6rem;
+          transform: translateX(50%);
+
+          .carousel-indicator{
+              width: 1rem;
+              height: 1rem;
+              border: none;
+              border-radius: 50%;
+              background: rgba($color: white, $alpha: .6);
+          }
+          .current-slide-indicator{
+              background: rgba($color: white, $alpha: 1);
+          }
+      }
+      
+      .carousel-track-container{
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+      }
       .carousel-track{
           width: 100%;
           height: 100%;
+          position: relative;
+          list-style-type: none;
+          transition: 300ms ease;
           .carousel-slide{
               width: 100%;
               height: 100%;
-              list-style-type: none;
+              position: absolute;
+              top: 0;
+              bottom: 0;    
               .img1{
                 background: url(../img/kalanggamanBG.png)
               }
               .img2{
                 background: url(../img/kalanggaman2.jpg);
+              }
+              .img3{
+                background: url(../img/lakeDanao.jpg);
               }
 
               .carousel-img{
@@ -236,10 +277,86 @@ body{
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                position: relative;
                 
-                
+                .carousel-1-left{
+                    // background: pink;
+                    .carousel-1-header{
+                        color: white;
+                        font-size: calc(2rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
+                        margin: 10% 0 0 10%;
+                        font-weight: 200;
+                        line-height: calc(2.5rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
+                        span{
+                            font-weight: 500;
+                        }
+                    }
+                }
+               
             }
           }
+        }
+        .section-1-info{
+            width: 70%;
+            height: 20%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%,50%);
+            background: white;
+            box-shadow: 0px 10px 20px 10px rgba($color: #c3c3c3, $alpha: .3);
+            display: grid;
+            grid-template-columns: 3fr 1.5fr;
+            .info-1-left{
+                // background: pink;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 3rem;
+
+                .info-secondary-header{
+                    color: grey;
+                    font-size: 1rem;
+                }
+                .info-primary-header{
+                    font-size: 2.1rem;
+                }
+            }
+            .info-1-right{
+                // background: limegreen;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                .info-right-sec1{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: center;
+                    text-align: justify;
+                    .info-right-h1{
+                        font-size: 1rem;
+                    }
+                    .info-right-h2{
+                        font-size: 1rem;
+                        color: grey;
+                    }
+                }
+                .info-right-sec2{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .info-button{
+                        width: 4rem;
+                        height: 4rem;
+                        border: 0;
+                        background-color: var(--dark-second-color);
+                        color: white;
+                        font-size: 2.5rem;
+                        box-shadow: 0px 0px 20px 5px var(--light-second-color);
+                    }
+                }
+            }
         }
     }
     
@@ -249,7 +366,8 @@ body{
     height: 100vh;
 }
 
-@media screen and (max-width: 1020px){
+@media screen and (max-width: 1024px){
+
 
     #burger-btn{
         display: block;
@@ -260,12 +378,11 @@ body{
     .section1{
         display: block;
         .siteNavBar{
-            display: none !important;
+            display: none !important; 
         }
-        .section1-banner{
-            width: 100%;
-            height: 100vh;
-        }
+    }
+    .carousel-1-header{
+        margin: 35% 0 0 10%!important;
     }
 
 

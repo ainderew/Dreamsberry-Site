@@ -15,11 +15,13 @@
   --dark-main-color: #dd2c00;
   --light-second-color: #b2ebf2;
   --dark-second-color: #00bcd4;
+  --dark-font-color: rgb(49, 49, 49);
 }
 
 body {
   width: 100vw;
   height: 100vh;
+  color: var(--dark-font-color);
 }
 
 #burger-btn {
@@ -107,18 +109,6 @@ body {
   background: #de7119;
   color: white;
   font-size: 1.1rem;
-}
-
-.mainContainerMenu {
-  width: 100vw;
-  height: 100%;
-  background: url(../img/kalanggamanBG.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  position: relative;
-  overflow: hidden;
 }
 
 .mainContainer {
@@ -225,7 +215,7 @@ body {
 
 .section1 .siteNavBar #header-nav #nav-btn {
   border: none;
-  background: var(--light-second-color);
+  background: white;
   width: 13rem;
   height: 6rem;
   color: black;
@@ -234,7 +224,7 @@ body {
 
 .section1 .section1-carousel {
   width: 100%;
-  height: 100%;
+  height: 85%;
   position: relative;
 }
 
@@ -245,19 +235,79 @@ body {
 }
 
 .section1 .section1-carousel .carousel-btn {
+  width: 2rem;
+  height: 2rem;
+}
+
+.section1 .section1-carousel .carousel-down-btn,
+.section1 .section1-carousel .carousel-up-btn {
+  position: absolute;
+  right: 10%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  outline: none;
+}
+
+.section1 .section1-carousel .carousel-up-btn {
+  bottom: 40%;
+}
+
+.section1 .section1-carousel .carousel-down-btn {
+  bottom: 35%;
+}
+
+.section1 .section1-carousel .carousel-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: absolute;
+  right: 10%;
+  bottom: 50%;
+  height: 6rem;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.section1 .section1-carousel .carousel-nav .carousel-indicator {
   width: 1rem;
   height: 1rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.section1 .section1-carousel .carousel-nav .current-slide-indicator {
+  background: white;
+}
+
+.section1 .section1-carousel .carousel-track-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .section1 .section1-carousel .carousel-track {
   width: 100%;
   height: 100%;
+  position: relative;
+  list-style-type: none;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
 }
 
 .section1 .section1-carousel .carousel-track .carousel-slide {
   width: 100%;
   height: 100%;
-  list-style-type: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 
 .section1 .section1-carousel .carousel-track .carousel-slide .img1 {
@@ -268,12 +318,129 @@ body {
   background: url(../img/kalanggaman2.jpg);
 }
 
+.section1 .section1-carousel .carousel-track .carousel-slide .img3 {
+  background: url(../img/lakeDanao.jpg);
+}
+
 .section1 .section1-carousel .carousel-track .carousel-slide .carousel-img {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  position: relative;
+}
+
+.section1 .section1-carousel .carousel-track .carousel-slide .carousel-img .carousel-1-left .carousel-1-header {
+  color: white;
+  font-size: calc(2rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
+  margin: 10% 0 0 10%;
+  font-weight: 200;
+  line-height: calc(2.5rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
+}
+
+.section1 .section1-carousel .carousel-track .carousel-slide .carousel-img .carousel-1-left .carousel-1-header span {
+  font-weight: 500;
+}
+
+.section1 .section1-carousel .section-1-info {
+  width: 70%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  background: white;
+  -webkit-box-shadow: 0px 10px 20px 10px rgba(195, 195, 195, 0.3);
+          box-shadow: 0px 10px 20px 10px rgba(195, 195, 195, 0.3);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1.5fr;
+      grid-template-columns: 3fr 1.5fr;
+}
+
+.section1 .section1-carousel .section-1-info .info-1-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 3rem;
+}
+
+.section1 .section1-carousel .section-1-info .info-1-left .info-secondary-header {
+  color: grey;
+  font-size: 1rem;
+}
+
+.section1 .section1-carousel .section-1-info .info-1-left .info-primary-header {
+  font-size: 2.1rem;
+}
+
+.section1 .section1-carousel .section-1-info .info-1-right {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.section1 .section1-carousel .section-1-info .info-1-right .info-right-sec1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: justify;
+}
+
+.section1 .section1-carousel .section-1-info .info-1-right .info-right-sec1 .info-right-h1 {
+  font-size: 1rem;
+}
+
+.section1 .section1-carousel .section-1-info .info-1-right .info-right-sec1 .info-right-h2 {
+  font-size: 1rem;
+  color: grey;
+}
+
+.section1 .section1-carousel .section-1-info .info-1-right .info-right-sec2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section1 .section1-carousel .section-1-info .info-1-right .info-right-sec2 .info-button {
+  width: 4rem;
+  height: 4rem;
+  border: 0;
+  background-color: var(--dark-second-color);
+  color: white;
+  font-size: 2.5rem;
+  -webkit-box-shadow: 0px 0px 20px 5px var(--light-second-color);
+          box-shadow: 0px 0px 20px 5px var(--light-second-color);
 }
 
 .section2 {
@@ -281,7 +448,7 @@ body {
   height: 100vh;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1024px) {
   #burger-btn {
     display: block;
   }
@@ -295,9 +462,8 @@ body {
   .section1 .siteNavBar {
     display: none !important;
   }
-  .section1 .section1-banner {
-    width: 100%;
-    height: 100vh;
+  .carousel-1-header {
+    margin: 35% 0 0 10% !important;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
  
     <div class="mainContainer">
         <img id="burger-btn" src="./img/burger.svg" alt="">
-        <header id=phoneNavBar>
+        <header id="phoneNavBar">
             <div class="phoneNav-Logo-Container">
                 <h1 id="phoneNav-Logo">DreamsBerry</h1>
             </div>
@@ -45,23 +45,47 @@
 
             </div>
             <div class="section1-carousel">
+               <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <div class="carousel-img img1">
+                                <div class="carousel-1-left">
+                                    <h1 class="carousel-1-header"><span>Explore</span> Leyte in<br/> comfort and <br/>security</h1>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="carousel-img img2"></div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="carousel-img img3"></div>
+                        </li>
+                    </ul>
+               </div>
+               <div class="section-1-info">
+                   <div class="info-1-left">
+                        <h2 class="info-secondary-header">PALOMPON</h2>
+                        <h1 class="info-primary-header">Kalanggaman Island</h1>
+                   </div>
+                   <div class="info-1-right">
+                        <div class="info-right-sec1">
+                            <h1 class="info-right-h1">More Info</h1>
+                            <h2 class="info-right-h2">Pricing</h2>
+                        </div>
+                        <div class="info-right-sec2">
+                            <button class="info-button">+</button>
+                        </div>
+                   </div>
+               </div>
                 <button class="carousel-btn-cont carousel-up-btn">
                     <img class="carousel-btn" src="./img/upArrow.svg" alt="">
                 </button>
-                <ul class="carousel-track">
-                    <li class="carousel-slide">
-                        <div class="carousel-img img1"></div>
-                    </li>
-                    <li class="carousel-slide">
-                        <div class="carousel-img img2"></div>
-                    </li>
-                </ul>
-                <button class="carousel-btn-cont carousel-dowm-btn">
+                <button class="carousel-btn-cont carousel-down-btn">
                     <img class="carousel-btn" src="./img/downArrow.svg" alt="">
                 </button>
 
                 <div class="carousel-nav">
-                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator current-slide-indicator"></button>
                     <button class="carousel-indicator"></button>
                     <button class="carousel-indicator"></button>
                 </div>
