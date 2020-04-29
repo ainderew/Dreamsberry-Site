@@ -20,6 +20,7 @@ body{
     width: 100vw;
     height: 100vh;
     color: var(--dark-font-color);
+    overflow-x:hidden;
 }
 
 #burger-btn{
@@ -93,23 +94,23 @@ body{
     overflow-x: hidden;
 
 }
-// .filter{
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100vw;
-//     height: 100vh;
-//     background: linear-gradient(180deg, rgba(0,0,0,1) 12%, rgba(0,0,0,0.804359243697479) 50%, rgba(0,212,255,0) 100%);
-//     animation: opacity 500ms ease;
-// }
-// @keyframes opacity{
-//     from{
-//         opacity: 0;
-//     }
-//     to{
-//         opacity: 1;
-//     }
-// }
+
+.slider,
+.slider2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #83a4d4, #b6fbff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: -1;
+}
+
+.slider2{
+    display: none;
+    z-index: 300;
+    transform-origin: right;
+}
 
 .section1{
     width: 100vw;
@@ -196,7 +197,7 @@ body{
     .section1-carousel{
     //    border: 1px red solid; 
       width: 100%;
-      height: 85%;
+      height: 80%;
       position:relative;
       .carousel-btn-cont{
         background: none;
@@ -289,7 +290,7 @@ body{
                         margin: 10% 0 0 10%;
                         font-weight: 200;
                         line-height: calc(2.5rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
-                        span{
+                        #header-span{
                             font-weight: 500;
                         }
                     }
@@ -364,6 +365,62 @@ body{
 .section2{
     width: 100%;
     height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 15rem; 
+    .sec-2-upper{
+        // border: blue 1px solid;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .sec-2-upper-left{
+            // background: pink;
+            grid-column: 1/2;
+            display: flex;
+            justify-content: flex-end;
+            .sec2-left-wrapper{
+                width: 80%;
+                height: 100%;
+                .sec-2-heading{
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+                .sec-2-paragraph{
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: grey;
+                }
+            }
+        }
+        .sec-2-upper-right{
+            grid-column: 2/3;
+            width: 100%;
+            height: 100%;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+            .sec-2-track{
+                height: 100%;
+                width: 100rem;
+                display: flex;
+                flex: auto;
+                .sec2Img1{
+                    background: url(../img/kalanggamanActivities.jpg)
+                }
+                .sec2Img2{
+                    margin-top: 6%;
+                    background: url(../img/kalanggamanActivities2.jpg)
+                }
+                .sec-2-imgs{
+                    width: 20%;
+                    height: 80%;
+                    margin-right: 2rem;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1024px){

@@ -22,6 +22,7 @@ body {
   width: 100vw;
   height: 100vh;
   color: var(--dark-font-color);
+  overflow-x: hidden;
 }
 
 #burger-btn {
@@ -116,6 +117,26 @@ body {
   height: 100%;
   position: relative;
   overflow-x: hidden;
+}
+
+.slider,
+.slider2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#83a4d4), to(#b6fbff));
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: -1;
+}
+
+.slider2 {
+  display: none;
+  z-index: 300;
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
 
 .section1 {
@@ -224,7 +245,7 @@ body {
 
 .section1 .section1-carousel {
   width: 100%;
-  height: 85%;
+  height: 80%;
   position: relative;
 }
 
@@ -343,7 +364,7 @@ body {
   line-height: calc(2.5rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
 }
 
-.section1 .section1-carousel .carousel-track .carousel-slide .carousel-img .carousel-1-left .carousel-1-header span {
+.section1 .section1-carousel .carousel-track .carousel-slide .carousel-img .carousel-1-left .carousel-1-header #header-span {
   font-weight: 500;
 }
 
@@ -446,6 +467,85 @@ body {
 .section2 {
   width: 100%;
   height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  margin-top: 15rem;
+}
+
+.section2 .sec-2-upper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.section2 .sec-2-upper .sec-2-upper-left {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.section2 .sec-2-upper .sec-2-upper-left .sec2-left-wrapper {
+  width: 80%;
+  height: 100%;
+}
+
+.section2 .sec-2-upper .sec-2-upper-left .sec2-left-wrapper .sec-2-heading {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.section2 .sec-2-upper .sec-2-upper-left .sec2-left-wrapper .sec-2-paragraph {
+  font-size: 1rem;
+  font-weight: 400;
+  color: grey;
+}
+
+.section2 .sec-2-upper .sec-2-upper-right {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.section2 .sec-2-upper .sec-2-upper-right .sec-2-track {
+  height: 100%;
+  width: 100rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+.section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec2Img1 {
+  background: url(../img/kalanggamanActivities.jpg);
+}
+
+.section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec2Img2 {
+  margin-top: 6%;
+  background: url(../img/kalanggamanActivities2.jpg);
+}
+
+.section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec-2-imgs {
+  width: 20%;
+  height: 80%;
+  margin-right: 2rem;
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width: 1024px) {

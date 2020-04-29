@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
     <title>Document</title>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
 </head>
 <body>
- 
-    <div class="mainContainer">
+    
+    <div onscroll="userScroll()" onclick="userScroll()" class="mainContainer">
         <img id="burger-btn" src="./img/burger.svg" alt="">
         <header id="phoneNavBar">
             <div class="phoneNav-Logo-Container">
@@ -28,10 +29,13 @@
     
             </div>
         </header>
+
+        
+
         <section class="section1">
             <header class = "siteNavBar">
                 <nav id="header-nav">
-                    <h1 id="nav-logo">DreamsBerry</h1>
+                    <a href="#mainCont"><h1 id="nav-logo">DreamsBerry</h1></a>
                     <ul id="nav-ul">
                         <li class="nav-li"><a class="nav-li-link" href="">Home</a></li>
                         <li class="nav-li"><a class="nav-li-link" href="">Contact us</a></li>
@@ -50,7 +54,7 @@
                         <li class="carousel-slide current-slide">
                             <div class="carousel-img img1">
                                 <div class="carousel-1-left">
-                                    <h1 class="carousel-1-header"><span>Explore</span> Leyte in<br/> comfort and <br/>security</h1>
+                                    <h1 class="carousel-1-header"><span id="header-span">Explore</span> <span id="subHeader-span">Leyte in<br/> comfort and <br/>security</span> </h1>
                                 </div>
                             </div>
                         </li>
@@ -92,10 +96,49 @@
             </div>
         </section>
         <section class="section2">
-            <h1>asdf</h1>
+            <div class="sec-2-upper">
+                <div class="sec-2-upper-left">
+                   <div class="sec2-left-wrapper">
+                        <h1 class="sec-2-heading">
+                            <span class="sec2-heading-hide">See Your Trip</span>
+                        </h1>
+                        <h2 class="sec-2-paragraph">
+                            <span class="sec2-paragraph-hide">
+                                plan and know what to expect
+                            </span>
+                        </h2>
+                        <h2 class="sec-2-paragraph">
+                            <span class="sec2-paragraph-hide">
+                                so you can prepare and plan now
+                            </span>
+                        </h2>
+                        <h2 class="sec-2-paragraph">
+                            <span class="sec2-paragraph-hide">
+                                and spend all your time later enjoying.
+                            </span>
+                        </h2>
+                   </div>
+                </div>
+                <div class="sec-2-upper-right">
+                    <div class="sec-2-track">
+                        <div class="sec-2-imgs sec2Img1"></div>
+                        <div class="sec-2-imgs sec2Img2"></div>
+                        <div class="sec-2-imgs sec2Img3"></div>
+                        <div class="sec-2-imgs sec2Img4"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="sec-2-lower">
+
+            </div>
         </section>
     </div>
+    <div class="slider"></div>
+    <div class="slider2">
+        <h1></h1>
+    </div>
+
     <script src="./js/index.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
 </body>
 </html>
