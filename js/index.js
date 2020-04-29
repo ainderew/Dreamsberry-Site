@@ -39,13 +39,33 @@ const userScroll = () =>{
     setTimeout(()=>{
         mainContainer.scrollTop = 0;
     },500)
-    
-  
 }
-  
+const tl2 = gsap.timeline(); 
 
+let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0
+}
+let callback = (entries, observer)=>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            tl2.to(".sec2-heading-hide",.2,{top:0})
+               .to(".hide1",.2,{top:0})
+               .to(".hide2",.2,{top:0})
+               .to(".hide3",.2,{top:0})
+               .to(".hide4",.2,{top:0})
 
-
+            console.log("isintersecting")
+        }else{
+            console.log("not intersecting")
+        }
+        
+    })
+}
+let observer = new IntersectionObserver(callback,options)
+let target = document.querySelector(".sec-2-upper");
+observer.observe(target)
 
 
 
