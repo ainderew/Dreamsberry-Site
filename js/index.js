@@ -8,7 +8,7 @@ const carouselIndicator = document.querySelectorAll(".carousel-indicator")
 const carouselUpBtn = document.querySelector(".carousel-up-btn");
 const carouselDownBtn = document.querySelector(".carousel-down-btn");
 const tl = gsap.timeline();
-let imgHeight = slides[0].getBoundingClientRect().height;
+
 
 burgerBtn.addEventListener("click",()=>{
     gsap.to("#phoneNavBar",{x:"-100%"})
@@ -17,19 +17,22 @@ burgerBtn.addEventListener("click",()=>{
     })
 })
 
-tl.fromTo(".section1-carousel",1,{height: 0,width:"100%"},{height:"70%"})  
-  .fromTo(".section1-carousel",1.2,{width:"100vw"},{width: "75vw", ease: "Power2.easeInOut"})
-  .to(".slider",1.2,{x:"200%", ease: "Power2.easeInOut"}, "-=1.2")
-  .from(".carousel-1-left",{opacity:0, x: 100}, "-=.7")
-  .from(".section-1-info",{display:"none",opacity: 0})
-  .fromTo(".slider2",{scale:0},{display:"block", scale:1},"+=200")
-  tl.addLabel("skip")
-  .fromTo(".slider2",{x:2000},{display:"block", x:0})
-  .from(".section1",.1,{display: "flex",alignItems:"center",justifyContent:"center"})
-  .from(".scroller",.1,{display:"none"})
-  .from(".siteNavBar",.1,{display:"none"})
-  .to(".section1-carousel",.5,{width:"100%",height:"80%"})
-  .to(".slider2",{x:-2000,display: "none"})
+tl.fromTo(".video-bg",1,{height:"0%",width:"100%"},{height:"80%"})
+  .to(".video-bg",1,{width:"80%"})
+  .to(".slider",1,{x:"100%"},"-=1")
+  .fromTo("#landing-logo",.5,{opacity:0,x:200},{opacity:1,x:0})
+  .fromTo(".landing-info",.5,{opacity:0},{opacity:1},"-=.5")
+  .fromTo("#line",{opacity:0},{opacity:1},"+=3")
+  .fromTo(".landing-header",{opacity:0,x:"-100%"},{opacity:1,x:"10%"},"+=1")
+  .to(".landing-header",{x:"-100%",opacity:0},"+=2")
+  .to(".landing-header",{x:"100%",opacity:0},"+=999")
+
+tl.addLabel("skip")
+  .fromTo(".slider2",{scaleY:0},{display:"block",scaleY:1})
+  .to(".landing-section",{display:"none"})
+  .to(".mainContainer",{display:"block"})
+  .to(".slider2",{y:"-100%"})
+  
 
 const userScroll = () =>{
     mainContainer.removeAttribute("onscroll")
@@ -38,27 +41,43 @@ const userScroll = () =>{
     tl.play("skip")
     setTimeout(()=>{
         mainContainer.scrollTop = 0;
-    },500)
+        let imgHeight = slides[0].getBoundingClientRect().height;
+        slides.forEach((slide,index)=>{
+            slide.style.top = `${imgHeight*index}px`
+        })
+    },1500)
 }
 const tl2 = gsap.timeline(); 
+const tl3 = gsap.timeline(); 
 
 let options = {
     root: null,
     rootMargin: "0px",
-    threshold: 1.0
+    threshold: .5
 }
 let callback = (entries, observer)=>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
-            tl2.to(".sec2-heading-hide",.2,{top:0})
-               .to(".hide1",.2,{top:0})
-               .to(".hide2",.2,{top:0})
-               .to(".hide3",.2,{top:0})
-               .to(".hide4",.2,{top:0})
+            tl2.to(".sec2-heading-hide",.3,{top:0})
+               .to(".hide1",.3,{top:0},"-=.1")
+               .to(".hide2",.3,{top:0},"-=.1")
+               .to(".hide3",.3,{top:0},"-=.1")
+               .to(".hide4",.3,{top:0},"-=.1")
+               .to("#sec-2-btn",{opacity:1},"-=.4")
+               .to(".sec2Img1",1,{opacity:1,y:0},"-=.6")
+               .to(".sec2Img2",1,{opacity:1,y:0},"-=.6")
 
             console.log("isintersecting")
         }else{
             console.log("not intersecting")
+            tl3.to(".sec2-heading-hide",.1,{top:"100%"})
+               .to(".hide1",.1,{top:"100%"})
+               .to(".hide2",.1,{top:"100%"})
+               .to(".hide3",.1,{top:"100%"})
+               .to(".hide4",.1,{top:"100%"})
+               .to("#sec-2-btn",.1,{opacity:0},"-=.4")
+               .to(".sec2Img1",{opacity:0,y:200},"-=.1")
+               .to(".sec2Img2",{opacity:0,y:-400})
         }
         
     })
@@ -69,9 +88,8 @@ observer.observe(target)
 
 
 
-slides.forEach((slide,index)=>{
-    slide.style.top = `${imgHeight*index}px`
-})
+
+
 carouselIndicator.forEach((el,index)=>{
     el.addEventListener("click",e=>{
         carouselIndicator.forEach(el=>el.classList.remove("current-slide-indicator"))
