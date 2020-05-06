@@ -21,6 +21,7 @@ body{
     height: 100vh;
     color: var(--dark-font-color);
     overflow-x:hidden;
+    position: relative;
 }
 
 #burger-btn{
@@ -94,7 +95,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    overflow-y: hidden;
     #landing-logo{
         position: absolute;
         top: 2%;
@@ -279,8 +280,8 @@ body{
         
       }
       .carousel-btn{
-        width: 2rem;
-        height: 2rem;
+        width: .8rem;
+        height: .8rem;
       }
       .carousel-down-btn,
       .carousel-up-btn{
@@ -307,8 +308,8 @@ body{
           transform: translateX(50%);
 
           .carousel-indicator{
-              width: 1rem;
-              height: 1rem;
+              width: .6rem;
+              height: .6rem;
               border: none;
               border-radius: 50%;
               background: rgba($color: white, $alpha: .6);
@@ -359,10 +360,10 @@ body{
                     // background: pink;
                     .carousel-1-header{
                         color: white;
-                        font-size: calc(2rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
+                        font-size: calc(1rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
                         margin: 10% 0 0 10%;
                         font-weight: 200;
-                        line-height: calc(2.5rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
+                        line-height: calc(1rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
                         #header-span{
                             font-weight: 500;
                         }
@@ -441,6 +442,7 @@ body{
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     margin-top: 15rem; 
+    // background: pink;
     .sec-2-upper{
         // border: blue 1px solid;
         display: grid;
@@ -492,7 +494,7 @@ body{
                     flex: 1;    
                     display: flex;
                     align-items: flex-end;
-                    padding-bottom: 10rem;
+                    padding-bottom: 4rem;
                     #sec-2-btn{
                         padding: 1rem 2rem;
                         text-decoration: none;
@@ -522,24 +524,31 @@ body{
             grid-column: 2/3;
             width: 100%;
             height: 100%;
-            overflow-x: scroll;
+            overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
             position: relative;
             .sec-2-track{
                 height: 100%;
                 width: 100rem;
                 display: flex;
-                flex: auto;
+                // background: blue;
                 .sec2Img1{
-                    background: url(../img/kalanggamanActivities.jpg)
+                    background: url(../img/kalanggamanActivities.jpg);
                 }
                 .sec2Img2{
                     margin-top: 6%;
                     background: url(../img/kalanggamanActivities2.jpg)
                 }
+                .sec2Img3{
+                    background: url(../img/kalanggamanActivities.jpg)
+                }
+                .sec2Img4{
+                    margin-top: 6%;
+                    background: url(../img/kalanggamanActivities2.jpg)
+                }
                 .sec-2-imgs{
                     width: 20%;
-                    height: 80%;
+                    height: 70%;
                     margin-right: 2rem;
                     background-size: cover;
                     background-position: center;
@@ -547,6 +556,16 @@ body{
             }
         }
     }
+}
+.section3{
+    width: 100%;
+    height: 100vh;
+    // background: pink ;
+}
+.section4{
+    width: 100%;
+    height: 100vh;
+    background: pink ;
 }
 
 @media screen and (max-width: 1024px){
@@ -609,4 +628,9 @@ body{
     }
 
 
+}
+
+.fixed{
+    position: sticky;
+    top: 200px;
 }

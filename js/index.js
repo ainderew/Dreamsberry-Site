@@ -1,13 +1,27 @@
 const burgerBtn = document.getElementById("burger-btn");
-
 const mainContainer = document.querySelector(".mainContainer");
 const section1 = document.querySelector(".section1");
+const section2 = document.querySelector(".section2");
 const carouselUL = document.querySelector(".carousel-track");
 const slides = Array.from(carouselUL.children);
 const carouselIndicator = document.querySelectorAll(".carousel-indicator")
 const carouselUpBtn = document.querySelector(".carousel-up-btn");
 const carouselDownBtn = document.querySelector(".carousel-down-btn");
 const tl = gsap.timeline();
+const tl2 = gsap.timeline({paused: true});
+const tl3 = gsap.timeline();
+
+let section2OffsetTop = 0;
+let section2OffsetHeight = 0;
+
+function offset(el) {
+    var rect = el.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+}
+
+
 
 
 burgerBtn.addEventListener("click",()=>{
@@ -17,8 +31,8 @@ burgerBtn.addEventListener("click",()=>{
     })
 })
 
-tl.fromTo(".video-bg",1,{height:"0%",width:"100%"},{height:"80%"})
-  .to(".video-bg",1,{width:"80%"})
+tl.fromTo(".video-bg",1,{height:"0%",width:"100%"},{height:"80%",ease: Power2})
+  .to(".video-bg",1,{width:"80%",ease:Power2})
   .to(".slider",1,{x:"100%"},"-=1")
   .fromTo("#landing-logo",.5,{opacity:0,x:200},{opacity:1,x:0})
   .fromTo(".landing-info",.5,{opacity:0},{opacity:1},"-=.5")
@@ -45,51 +59,79 @@ const userScroll = () =>{
         slides.forEach((slide,index)=>{
             slide.style.top = `${imgHeight*index}px`
         })
+        section2OffsetTop = section2.offsetTop
+        section2OffsetHeight = section2.offsetHeight
+        
+        
     },1500)
 }
-const tl2 = gsap.timeline(); 
-const tl3 = gsap.timeline(); 
+
+
+const progressTween = () =>{
+    const scrollPosition = (mainContainer.scrollTop + window.innerHeight);
+    const elPosition = (scrollPosition - 962);
+    const durationDistance = (window.innerHeight + 722);
+    const currentProgress = (elPosition / durationDistance);
+    tl3.progress(currentProgress)
+    
+}
+tl2.to(".sec2-heading-hide",.3,{top:0})
+.to(".hide1",.3,{top:0},"-=.1")
+.to(".hide2",.3,{top:0},"-=.1")
+.to(".hide3",.3,{top:0},"-=.1")
+.to(".hide4",.3,{top:0},"-=.1")
+.to("#sec-2-btn",{opacity:1},"-=.4")
+.fromTo(".sec2Img1",.5,{opacity:0,y:200},{opacity:1,y:0},"-=.6")
+.fromTo(".sec2Img2",.5,{opacity:0,y:-200},{opacity:1,y:0})
+.fromTo(".sec2Img3",.5,{opacity:0,y:200},{opacity:1,y:0})
+.fromTo(".sec2Img4",.5,{opacity:0,y:-200},{opacity:1,y:0});
+
+tl3.fromTo(".sec-2-track",{x:"100%", y:0},{x: "-100%",y:0});
 
 let options = {
     root: null,
-    rootMargin: "0px",
-    threshold: .5
-}
-let callback = (entries, observer)=>{
-    entries.forEach(entry=>{
-        if (entry.isIntersecting){
-            tl2.to(".sec2-heading-hide",.3,{top:0})
-               .to(".hide1",.3,{top:0},"-=.1")
-               .to(".hide2",.3,{top:0},"-=.1")
-               .to(".hide3",.3,{top:0},"-=.1")
-               .to(".hide4",.3,{top:0},"-=.1")
-               .to("#sec-2-btn",{opacity:1},"-=.4")
-               .to(".sec2Img1",1,{opacity:1,y:0},"-=.6")
-               .to(".sec2Img2",1,{opacity:1,y:0},"-=.6")
+    rootMargin: '0px 0px 0px 0px',
+    threshold: 0
+  };
 
-            console.log("isintersecting")
+const dol = document.querySelector(".sec-2-upper");
+  
+let callBack = (entries, observer) => {
+    entries.forEach(entry =>{
+        if (entry.intersectionRatio > 0){
+            gsap.ticker.add(progressTween);
+            console.log("is intersecting")
+            tl2.play();
+            dol.classList.add("fixed")
         }else{
-            console.log("not intersecting")
-            tl3.to(".sec2-heading-hide",.1,{top:"100%"})
-               .to(".hide1",.1,{top:"100%"})
-               .to(".hide2",.1,{top:"100%"})
-               .to(".hide3",.1,{top:"100%"})
-               .to(".hide4",.1,{top:"100%"})
-               .to("#sec-2-btn",.1,{opacity:0},"-=.4")
-               .to(".sec2Img1",{opacity:0,y:200},"-=.1")
-               .to(".sec2Img2",{opacity:0,y:-400})
+            console.log("not intersecting");
+            gsap.ticker.remove(progressTween);
+            tl2.reverse();
         }
-        
-    })
-}
-let observer = new IntersectionObserver(callback,options)
-let target = document.querySelector(".sec-2-upper");
-observer.observe(target)
+    });
+};
+let observer = new IntersectionObserver(callBack, options);
+
+observer.observe(section2);
+
+
+
+  
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+//for carousel
 carouselIndicator.forEach((el,index)=>{
     el.addEventListener("click",e=>{
         carouselIndicator.forEach(el=>el.classList.remove("current-slide-indicator"))
@@ -133,3 +175,10 @@ carouselUpBtn.addEventListener("click",e=>{
     carouselIndicator[activeIndicator-1].classList.add("current-slide-indicator")
     activeIndicator--;
 })
+
+
+
+
+
+
+

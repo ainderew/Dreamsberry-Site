@@ -23,6 +23,7 @@ body {
   height: 100vh;
   color: var(--dark-font-color);
   overflow-x: hidden;
+  position: relative;
 }
 
 #burger-btn {
@@ -125,7 +126,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: relative;
+  overflow-y: hidden;
 }
 
 .landing-section #landing-logo {
@@ -356,8 +357,8 @@ body {
 }
 
 .section1 .section1-carousel .carousel-btn {
-  width: 2rem;
-  height: 2rem;
+  width: .8rem;
+  height: .8rem;
 }
 
 .section1 .section1-carousel .carousel-down-btn,
@@ -397,8 +398,8 @@ body {
 }
 
 .section1 .section1-carousel .carousel-nav .carousel-indicator {
-  width: 1rem;
-  height: 1rem;
+  width: .6rem;
+  height: .6rem;
   border: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.6);
@@ -458,10 +459,10 @@ body {
 
 .section1 .section1-carousel .carousel-track .carousel-slide .carousel-img .carousel-1-left .carousel-1-header {
   color: white;
-  font-size: calc(2rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
+  font-size: calc(1rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
   margin: 10% 0 0 10%;
   font-weight: 200;
-  line-height: calc(2.5rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
+  line-height: calc(1rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
 }
 
 .section1 .section1-carousel .carousel-track .carousel-slide .carousel-img .carousel-1-left .carousel-1-header #header-span {
@@ -653,7 +654,7 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding-bottom: 10rem;
+  padding-bottom: 4rem;
 }
 
 .section2 .sec-2-upper .sec-2-upper-left .sec2-left-wrapper .button-container #sec-2-btn {
@@ -685,7 +686,7 @@ body {
   grid-column: 2/3;
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   position: relative;
 }
@@ -696,9 +697,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
 }
 
 .section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec2Img1 {
@@ -710,12 +708,32 @@ body {
   background: url(../img/kalanggamanActivities2.jpg);
 }
 
+.section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec2Img3 {
+  background: url(../img/kalanggamanActivities.jpg);
+}
+
+.section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec2Img4 {
+  margin-top: 6%;
+  background: url(../img/kalanggamanActivities2.jpg);
+}
+
 .section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec-2-imgs {
   width: 20%;
-  height: 80%;
+  height: 70%;
   margin-right: 2rem;
   background-size: cover;
   background-position: center;
+}
+
+.section3 {
+  width: 100%;
+  height: 100vh;
+}
+
+.section4 {
+  width: 100%;
+  height: 100vh;
+  background: pink;
 }
 
 @media screen and (max-width: 1024px) {
@@ -796,5 +814,11 @@ body {
   .section2 .sec-2-upper .sec-2-upper-left .sec2-left-wrapper .button-container {
     padding: 5rem 0 5rem 0;
   }
+}
+
+.fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 200px;
 }
 /*# sourceMappingURL=main.css.map */
