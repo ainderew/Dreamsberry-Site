@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/82758b010a.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
     <section class="landing-section"  onscroll="userScroll()" onclick="userScroll()">
         <h1 id="landing-logo">DreamsBerry</h1>
-        <video class="video-bg" loop muted autoplay src="./img/videoplayback.mp4"></video>
+        <video class="video-bg" loop muted autoplay src="./img/videoplayback1.mp4"></video>
         <div class="landing-text-container">
             <div id="line"></div>
             <h1 class="landing-header"><span>Explore</span> Leyte <br>in comfort and security</h1>
@@ -24,6 +25,13 @@
         </div>
     </section>
     <div class="mainContainer">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+        <div id="scroll-down-indicator">
+            <i class="fas fa-long-arrow-alt-down"></i>
+            <h4>scroll down</h4>
+        </div>
         <img id="burger-btn" src="./img/burger.svg" alt="">
         <header id="phoneNavBar">
             <div class="phoneNav-Logo-Container">
@@ -48,7 +56,7 @@
         <section class="section1">
             <header class = "siteNavBar">
                 <nav id="header-nav">
-                    <a href="#mainCont" id="nav-logo-container"><img id="nav-logo" src="./img/DreamsBerry.svg" alt=""></a>
+                    <a href="#mainCont" id="nav-logo-container"><h1 id="nav-logo">DreamsBerry</h1></a>
                     <ul id="nav-ul">
                         <li class="nav-li"><a class="nav-li-link" href="">Home</a></li>
                         <li class="nav-li"><a class="nav-li-link" href="">Contact us</a></li>
@@ -146,6 +154,7 @@
                         <div class="sec-2-imgs sec2Img2"></div>
                         <div class="sec-2-imgs sec2Img3"></div>
                         <div class="sec-2-imgs sec2Img4"></div>
+                        <div class="sec-2-imgs sec2Img5"></div>
 
                     </div>
                 </div>
@@ -155,9 +164,32 @@
             </div>
         </section>
         <section class="section3">
-          
+            <div class="sec-3-img"></div>
+            <div class="sec-3-review">
+                <h1 class="sec-3-reviewTitle">Epitome of Paradise</h1>
+                <h2>
+                   Without a doubt the most beautiful place I’ve ever been to. Fine powdery white sands covers this paradise and kisses your feet 
+                </h2>
+                
+            </div>
         </section>
         <section class="section4">
+            <div class="tag-line-container">
+                <h1 id="counter-container"><span id="counter">0</span></h1>
+                <div id="tag-line-1">
+                    <h1>Meters</h1>
+                    <h2>Of pure beauty</h2>
+                </div>
+            </div>
+            
+        </section>
+        <section class="section5">
+            <div class="sec-5-img"></div>
+        </section>
+        <section class="section6">
+
+        </section>
+        <section class="section7">
 
         </section>
     </div>
@@ -166,6 +198,8 @@
         
     </div>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="./js/countUp.js"></script>
     <script src="./js/index.js"></script>
+   
 </body>
 </html>

@@ -4,6 +4,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: poppins;
+  scroll-behavior: smooth;
 }
 
 * ::-webkit-scrollbar {
@@ -15,6 +16,7 @@
   --dark-main-color: #dd2c00;
   --light-second-color: #b2ebf2;
   --dark-second-color: #00bcd4;
+  --dark-third-color: #3C7EFF;
   --dark-font-color: rgb(49, 49, 49);
 }
 
@@ -24,6 +26,37 @@ body {
   color: var(--dark-font-color);
   overflow-x: hidden;
   position: relative;
+}
+
+#scroll-down-indicator {
+  width: 5rem;
+  height: 10rem;
+  position: fixed;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--dark-third-color);
+}
+
+#scroll-down-indicator .fa-long-arrow-alt-down {
+  font-size: 3rem;
+  -webkit-animation: scrollDownArrow 1s infinite;
+          animation: scrollDownArrow 1s infinite;
+}
+
+#scroll-down-indicator h4 {
+  font-size: .6rem;
 }
 
 #burger-btn {
@@ -246,8 +279,8 @@ body {
   height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: .1fr 2fr;
-      grid-template-columns: .1fr 2fr;
+  -ms-grid-columns: .16fr 2fr;
+      grid-template-columns: .16fr 2fr;
   -ms-grid-rows: .2fr 3fr;
       grid-template-rows: .2fr 3fr;
 }
@@ -288,11 +321,13 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  text-decoration: none;
 }
 
 .section1 .siteNavBar #header-nav #nav-logo-container #nav-logo {
   margin-left: 7rem;
   width: 10rem;
+  color: black;
 }
 
 .section1 .siteNavBar #header-nav #nav-ul {
@@ -303,19 +338,20 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 6rem;
 }
 
 .section1 .siteNavBar #header-nav #nav-ul .nav-li .nav-li-link {
   color: grey;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: .8rem;
   position: relative;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
+  padding: 0 1rem;
 }
 
 .section1 .siteNavBar #header-nav #nav-ul .nav-li .nav-li-link::before {
@@ -567,7 +603,7 @@ body {
 
 .section2 {
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[2];
@@ -648,13 +684,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
 }
 
 .section2 .sec-2-upper .sec-2-upper-left .sec2-left-wrapper .button-container #sec-2-btn {
@@ -667,28 +697,16 @@ body {
   opacity: 0;
 }
 
-.section2 .sec-2-upper .sec-2-upper-left .sec2-left-wrapper::before {
-  content: "";
-  position: absolute;
-  left: -10%;
-  top: -17%;
-  width: 10rem;
-  height: 10rem;
-  background: url(../img/dots.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .section2 .sec-2-upper .sec-2-upper-right {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   width: 100%;
-  height: 100%;
+  height: 50%;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   position: relative;
+  margin-left: 2rem;
 }
 
 .section2 .sec-2-upper .sec-2-upper-right .sec-2-track {
@@ -697,6 +715,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-y: hidden;
 }
 
 .section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec2Img1 {
@@ -717,8 +736,12 @@ body {
   background: url(../img/kalanggamanActivities2.jpg);
 }
 
+.section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec2Img5 {
+  background: url(../img/kalanggamanActivities2.jpg);
+}
+
 .section2 .sec-2-upper .sec-2-upper-right .sec-2-track .sec-2-imgs {
-  width: 20%;
+  width: 15%;
   height: 70%;
   margin-right: 2rem;
   background-size: cover;
@@ -727,13 +750,104 @@ body {
 
 .section3 {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.section3 .sec-3-img {
+  width: 100%;
+  height: 100%;
+  background: url("../img/kalanggamanBG.png");
+  background-attachment: fixed;
+  background: cover;
+  background-position: center;
+}
+
+.section3 .sec-3-review {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  border: yellow 2px solid;
 }
 
 .section4 {
   width: 100%;
-  height: 100vh;
-  background: pink;
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section4 .tag-line-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20rem;
+}
+
+.section4 .tag-line-container #counter {
+  font-size: 7rem;
+  color: var(--dark-second-color);
+}
+
+.section4 .tag-line-container #tag-line-1 {
+  margin-left: 2rem;
+}
+
+.section4 .tag-line-container #tag-line-1 h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.section4 .tag-line-container #tag-line-1 h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.section5 {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.section5 .sec-5-img {
+  width: 100%;
+  height: 100%;
+  background: url("../img/kalanggaman3.jpg");
+  background-attachment: fixed;
+  background: cover;
+  background-position: center;
+}
+
+.section6 {
+  width: 100%;
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section7 {
+  width: 100%;
+  height: 70vh;
+  background: url("../img/kalanggaman2.jpg");
+  background-attachment: fixed;
+  background: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 1024px) {
@@ -762,6 +876,7 @@ body {
         grid-template-columns: 1fr;
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+    height: 100vh;
   }
   .section2 .sec-2-upper {
     -ms-grid-row: 1;
@@ -775,14 +890,21 @@ body {
         grid-template-rows: 1fr 1fr;
   }
   .section2 .sec-2-upper .sec-2-upper-right {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-  }
-  .section2 .sec-2-upper .sec-2-upper-left {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .section2 .sec-2-upper .sec-2-upper-right .sec-2-imgs {
+    width: 10% !important;
+    height: 50% !important;
+  }
+  .section2 .sec-2-upper .sec-2-upper-left {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
     -ms-grid-column: 1 !important;
     -ms-grid-column-span: 2 !important;
     grid-column: 1/3 !important;
@@ -814,11 +936,86 @@ body {
   .section2 .sec-2-upper .sec-2-upper-left .sec2-left-wrapper .button-container {
     padding: 5rem 0 5rem 0;
   }
+  .section4 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section4 .tag-line-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0;
+  }
+  .section4 .tag-line-container #counter {
+    font-size: 4rem;
+    color: var(--dark-second-color);
+  }
+  .section4 .tag-line-container #tag-line-1 h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .section4 .tag-line-container #tag-line-1 h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
 }
 
 .fixed {
   position: -webkit-sticky;
   position: sticky;
-  top: 200px;
+  top: 250px;
+}
+
+.progress-container {
+  position: fixed;
+  right: 0;
+  z-index: 3;
+  width: .4rem;
+  height: 100%;
+  background: #eeeeee;
+}
+
+.progress-container .progress-bar {
+  height: 0%;
+  background: -webkit-gradient(linear, left top, right top, from(var(--dark-third-color)), to(var(--dark-second-color)));
+  background: linear-gradient(to right, var(--dark-third-color), var(--dark-second-color));
+  width: .4rem;
+}
+
+@-webkit-keyframes scrollDownArrow {
+  0% {
+    -webkit-transform: translateY(-0.5rem);
+            transform: translateY(-0.5rem);
+  }
+  50% {
+    -webkit-transform: translateY(0.5rem);
+            transform: translateY(0.5rem);
+  }
+  100% {
+    -webkit-transform: translateY(-0.5rem);
+            transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes scrollDownArrow {
+  0% {
+    -webkit-transform: translateY(-0.5rem);
+            transform: translateY(-0.5rem);
+  }
+  50% {
+    -webkit-transform: translateY(0.5rem);
+            transform: translateY(0.5rem);
+  }
+  100% {
+    -webkit-transform: translateY(-0.5rem);
+            transform: translateY(-0.5rem);
+  }
 }
 /*# sourceMappingURL=main.css.map */
