@@ -90,7 +90,7 @@ tl4.fromTo("#counter-container",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"})
    .fromTo("#tag-line-1",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"},"-=.8");
 
 tl5.fromTo(".sec-3-img",1,{x:"0%"},{x:"-100%"})
-   .fromTo(".sec-3-review",1,{right:"-30%"},{right:"50%"},"-.01");
+   .fromTo(".sec-3-review",1,{right:"-30%"},{right:"60%"},"-.01");
 tl6.fromTo(".sec-5-img",1,{x:"0%"},{x:"100%"})
 
 const progressTween = () =>{
@@ -102,7 +102,7 @@ const progressTween = () =>{
     
 }
 const section3Progress = () =>{
-    const scrollPosition = (mainContainer.scrollTop + 300);
+    const scrollPosition = (mainContainer.scrollTop + 400);
     const elPosition = (scrollPosition - section3OffsetTop);
     const durationDistance = (window.innerHeight + section3OffsetHeight);
     const currentProgress = (elPosition / durationDistance);

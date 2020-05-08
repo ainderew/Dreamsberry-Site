@@ -596,6 +596,7 @@ body{
     height: 70vh;
     overflow: hidden;
     display: flex;
+    align-items: center;
     position: relative;
     .sec-3-img{
         width: 100%;
@@ -606,11 +607,31 @@ body{
         background-position: center;
     }
     .sec-3-review{
-        width: 30%;
-        height: 100%;
+        width: 25%;
+        height: 80%;
         position: absolute;
-        border: yellow 2px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        box-shadow: -15px -15px 15px rgba(255,255,255,0.5),
+                    15px 15px 15px rgba(0,0,0,0.05);
+        .sec-3-reviewTitle{
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        h2{
+            font-size: 1rem;
+        }
     }
+}
+.sec-3-reviewTitle::after{
+    content: "\201C";
+    position: absolute;
+    top: -10%;
+    left: 0;
+    z-index: 2;
+    font-size: 10rem;
 }
 .section4{
     width: 100%;
