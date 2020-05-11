@@ -4,6 +4,7 @@ const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
 const section5 = document.querySelector(".section5");
+const section6 = document.querySelector(".section6");
 const carouselUL = document.querySelector(".carousel-track");
 const slides = Array.from(carouselUL.children);
 const carouselIndicator = document.querySelectorAll(".carousel-indicator")
@@ -17,6 +18,7 @@ const tl3 = gsap.timeline();
 const tl4 = gsap.timeline({paused: true});
 const tl5 = gsap.timeline({paused: true});
 const tl6 = gsap.timeline({paused: true});
+const TLsection6 = gsap.timeline({paused: true});
 
 let section2OffsetTop = 0;
 let section2OffsetHeight = 0;
@@ -86,12 +88,17 @@ tl2.to(".sec2-heading-hide",.3,{top:0})
 .fromTo(".sec2Img4",.5,{opacity:0,y:-200},{opacity:1,y:0},"-=.8")
 
 tl3.fromTo(".sec-2-track",{x:"0%", y:0},{x: "-83%",y:0});
+
 tl4.fromTo("#counter-container",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"})
    .fromTo("#tag-line-1",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"},"-=.8");
 
-tl5.fromTo(".sec-3-img",1,{x:"0%"},{x:"-100%"})
-   .fromTo(".sec-3-review",1,{right:"-30%"},{right:"60%"},"-.01");
-tl6.fromTo(".sec-5-img",1,{x:"0%"},{x:"100%"})
+tl5.fromTo(".sec-3-img",1,{x:"0%"},{x:"-85%"})
+   .fromTo(".sec-3-review",1,{right:"-30%"},{right:"50%"},"-.01");
+tl6.fromTo(".sec-5-img",1,{x:"0%"},{x:"85%"})
+   .fromTo(".sec-5-review",1,{left:"-30%"},{left:"50%"},"-.01");
+
+TLsection6.fromTo("#sec-6-counter",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"})
+          .fromTo(".sec-6-tagline",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"},"-=.8");
 
 const progressTween = () =>{
     const scrollPosition = (mainContainer.scrollTop + 200);
@@ -190,12 +197,25 @@ let section5ImageCallback = (entries,observer)=>{
     });
 }
 
+const section6CounterText = document.getElementById("sec-6-counter");
+const section6Counter = new CountUp("sec-6-counter", 0,483)
+let section6Callback = (entries,observer)=>{
+    entries.forEach(entry =>{
+        if (entry.intersectionRatio > 0){
+            TLsection6.play()
+            section6Counter.start();
+        }
+    });
+}
+
 
 intersectionObserver(callBack,section2)
 intersectionObserver(callBack2,sec2UpperRight);
 intersectionObserver(callBack3,counter);
 intersectionObserver(section3ImageCallback,section3);
 intersectionObserver(section5ImageCallback,section5);
+intersectionObserver(section6Callback,section6CounterText);
+
 
 
 

@@ -298,12 +298,13 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
+  background: white;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
 }
 
 .section1 .siteNavBar #header-nav {
@@ -384,6 +385,12 @@ body {
   width: 100%;
   height: 80%;
   position: relative;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
 }
 
 .section1 .section1-carousel .carousel-btn-cont {
@@ -764,10 +771,11 @@ body {
 .section3 .sec-3-img {
   width: 100%;
   height: 100%;
-  background: url("../img/kalanggamanBG.png");
+  background: url("../img/kalanggaman5.jpg");
   background-attachment: fixed;
   background: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .section3 .sec-3-review {
@@ -798,6 +806,7 @@ body {
 
 .section3 .sec-3-review h2 {
   font-size: 1rem;
+  font-weight: 400;
 }
 
 .sec-3-reviewTitle::after {
@@ -827,7 +836,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 20rem;
+  margin-left: 15rem;
 }
 
 .section4 .tag-line-container #counter {
@@ -853,6 +862,102 @@ body {
   width: 100%;
   height: 70vh;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.section5 .sec-5-review {
+  width: 25%;
+  height: 80%;
+  position: absolute;
+  -webkit-box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.5), 15px 15px 15px rgba(0, 0, 0, 0.05);
+          box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.5), 15px 15px 15px rgba(0, 0, 0, 0.05);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: .7fr 2fr;
+      grid-template-rows: .7fr 2fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.section5 .sec-5-review .sec-5-review-title {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section5 .sec-5-review .sec-5-review-title #tripadvisor-logo {
+  width: 50%;
+  height: 45%;
+}
+
+.section5 .sec-5-review .sec-5-review-wrapper {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section5 .sec-5-review .sec-5-review-wrapper .sec-5-review-container {
+  width: 100%;
+  height: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section5 .sec-5-review .sec-5-review-wrapper .sec-5-review-container .sec-5-review-content {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.section5 .sec-5-review .sec-5-review-wrapper .sec-5-review-container #star-rating {
+  width: 45%;
+  height: 45%;
+}
+
+.section5 .sec-5-review .sec-5-review-wrapper .sec-5-review-container .sec-5-review-secondaryContent {
+  font-size: 1rem;
+}
+
+.section5 .sec-5-review::after {
+  content: "\201C";
+  position: absolute;
+  top: -23%;
+  left: 0;
+  z-index: 2;
+  font-size: 14rem;
 }
 
 .section5 .sec-5-img {
@@ -873,16 +978,270 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.section6 .sec-6-tagline-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 15rem;
+}
+
+.section6 .sec-6-tagline-container #sec-6-counter {
+  font-size: 7rem;
+  color: var(--dark-second-color);
+}
+
+.section6 .sec-6-tagline-container .sec-6-tagline {
+  margin-left: 2rem;
+}
+
+.section6 .sec-6-tagline-container .sec-6-tagline .sec-6-secondary-tagline {
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section6 .sec-6-tagline-container .sec-6-tagline .sec-6-secondary-tagline #sec-6-tagline-tripadvisor {
+  margin-left: .5rem;
+  width: 7rem;
+  height: 1.5rem;
 }
 
 .section7 {
   width: 100%;
+  height: 100vh;
+}
+
+.section7 .sec-5-ul {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-left: 10rem;
+  text-align: justify;
+}
+
+.section7 .sec-5-ul .sec-5-li {
+  list-style-type: none;
+}
+
+.section7 .sec-5-ul .sec-5-li .sec-5-links {
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  font-family: "Limelight";
+}
+
+.footer {
+  width: 100%;
   height: 70vh;
-  background: url("../img/kalanggaman2.jpg");
-  background-attachment: fixed;
-  background: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #141414;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 1fr 1fr 2fr;
+      grid-template-columns: 1.5fr 1fr 1fr 2fr;
+}
+
+.footer .footer-col-1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: .5fr 2fr;
+      grid-template-rows: .5fr 2fr;
+  color: white;
+}
+
+.footer .footer-col-1 .footer-col-1-content {
+  margin-left: 3rem;
+}
+
+.footer .footer-col-1 .footer-col-1-content .footer-col-1-title {
+  font-size: 1.3rem;
+}
+
+.footer .footer-col-1 .footer-col-1-content .footer-col-1-h2 {
+  font-size: .9rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
+
+.footer .footer-col-2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: .5fr 1fr 1fr;
+      grid-template-rows: .5fr 1fr 1fr;
+  color: white;
+}
+
+.footer .footer-col-2 .footer-col-2-visit {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.footer .footer-col-2 .footer-col-2-visit .footer-col-2-visit-title {
+  font-size: 1rem;
+}
+
+.footer .footer-col-2 .footer-col-2-visit .footer-col-2-visit-content {
+  font-size: .9rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
+
+.footer .footer-col-2 .footer-col-2-contact {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
+.footer .footer-col-2 .footer-col-2-contact .footer-col-2-contact-email-title,
+.footer .footer-col-2 .footer-col-2-contact .footer-col-2-contact-phone-title {
+  font-size: 1rem;
+}
+
+.footer .footer-col-2 .footer-col-2-contact .footer-col-2-contact-email-content,
+.footer .footer-col-2 .footer-col-2-contact .footer-col-2-contact-phone-content {
+  font-size: .9rem;
+  font-weight: 200;
+}
+
+.footer .footer-col-2 .footer-col-2-contact .footer-col-2-contact-email {
+  margin-bottom: 2rem;
+}
+
+.footer .footer-col-3 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: .5fr 2fr;
+      grid-template-rows: .5fr 2fr;
+  color: white;
+}
+
+.footer .footer-col-3 .footer-col-3-socialMedia {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .footer-col-3 .footer-col-3-socialMedia .footer-col-3-socialMedia-title {
+  font-size: 1rem;
+}
+
+.footer .footer-col-3 .footer-col-3-socialMedia .footer-col-3-socialMedia-links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1rem;
+}
+
+.footer .footer-col-3 .footer-col-3-socialMedia .footer-col-3-socialMedia-links-container .footer-col-3-socialMedia-link {
+  margin: 1rem 0;
+}
+
+.footer .footer-col-3 .footer-col-3-socialMedia .footer-col-3-socialMedia-links-container .fab {
+  font-size: 2rem;
+  color: white;
+}
+
+.footer .footer-col-4 {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4/5;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3fr .5fr;
+      grid-template-rows: 3fr .5fr;
+  color: white;
+}
+
+.footer .footer-col-4 .footer-col-4-hireMe-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer .footer-col-4 .footer-col-4-hireMe-container .footer-col-4-hireMe-title {
+  font-size: 1.2rem;
+}
+
+.footer .footer-col-4 .footer-col-4-hireMe-container .footer-col-4-hireMe-email,
+.footer .footer-col-4 .footer-col-4-hireMe-container .footer-col-4-hireMe-number {
+  font-size: .9rem;
+  font-weight: 200;
+}
+
+.footer .footer-col-4 .copyright-container {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer .footer-col-4 .copyright-container .copyright-text {
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 @media screen and (max-width: 1024px) {
@@ -897,11 +1256,11 @@ body {
     display: -ms-grid;
     display: grid;
   }
+  .siteNavBar {
+    display: none !important;
+  }
   .section1 {
     display: block;
-  }
-  .section1 .siteNavBar {
-    display: none !important;
   }
   .carousel-1-header {
     margin: 35% 0 0 10% !important;
