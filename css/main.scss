@@ -772,26 +772,53 @@ body{
 }
 .section7{
     width: 100%;
-    height: 100vh;
-    .sec-5-ul{
-        height: 100%;
-        width: 40%;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        padding-left: 10rem;
-        text-align: justify;
-        // border: 1px yellow solid;
-        .sec-5-li{
-            list-style-type: none;
-            .sec-5-links{
-                text-decoration: none;
-                font-size: 3rem;
-                font-weight: 700;
-                color: white;
-                font-family: "Limelight";
-                
+    height: 300vh;
+    display: grid;
+    border: 1px solid red;
+    grid-template-columns: .7fr 1fr;
+    .sec-7-col-1-menu{
+        grid-column: 1/2;
+        background: black;
+        .sec-7-col-1-menu-ul{
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10rem;
+            padding-top: 3rem;
+            .sec-7-col-1-menu-li{
+                list-style-type: none;
+                margin: 1rem 0;
+                .sec-7-col-1-menu-li-links{
+                    text-decoration: none;
+                    font-size: 3rem;
+                    font-weight: 900;
+                    color: black;
+                    -webkit-text-stroke: 2px white;
+                    // letter-spacing: .2rem;
+                    transition: 300ms;
+                }
+                .sec-7-col-1-menu-li-links:hover{
+                    color: white;
+                }
+                .sec-7-col-1-menu-li-preview{
+                    width: 20rem;
+                    height: 20rem;
+                    background: grey;
+                }
+                .sec-7-col-1-menu-li-preview-tour{
+                    background: url(../img/kalanggaman5.jpg)
+                }
+                // .sec-7-col-1-menu-li-preview-tour{
+
+                // }
+                // .sec-7-col-1-menu-li-preview-tour{
+
+                // }
+                .sec-7-col-1-menu-li-preview{
+                    background-position: center;
+                    background-size: cover;
+                }
             }
         }
     }
@@ -1006,6 +1033,20 @@ body{
             }
         }
        
+    }
+    .section7{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        .sec-7-col-1-menu{
+            grid-row: 2/3;
+            .sec-7-col-1-menu-ul{
+                position: relative;
+                padding-left: 5rem;
+                .sec-7-col-1-menu-li-links{
+                    font-size: 2rem;
+                }
+            }
+        }
     }
 
 

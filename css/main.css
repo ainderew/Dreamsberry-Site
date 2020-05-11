@@ -1020,13 +1020,25 @@ body {
 
 .section7 {
   width: 100%;
-  height: 100vh;
+  height: 300vh;
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid red;
+  -ms-grid-columns: .7fr 1fr;
+      grid-template-columns: .7fr 1fr;
 }
 
-.section7 .sec-5-ul {
-  height: 100%;
-  width: 40%;
-  position: absolute;
+.section7 .sec-7-col-1-menu {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  background: black;
+}
+
+.section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1034,23 +1046,42 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   padding-left: 10rem;
-  text-align: justify;
+  padding-top: 3rem;
 }
 
-.section7 .sec-5-ul .sec-5-li {
+.section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul .sec-7-col-1-menu-li {
   list-style-type: none;
+  margin: 1rem 0;
 }
 
-.section7 .sec-5-ul .sec-5-li .sec-5-links {
+.section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul .sec-7-col-1-menu-li .sec-7-col-1-menu-li-links {
   text-decoration: none;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 900;
+  color: black;
+  -webkit-text-stroke: 2px white;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul .sec-7-col-1-menu-li .sec-7-col-1-menu-li-links:hover {
   color: white;
-  font-family: "Limelight";
+}
+
+.section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul .sec-7-col-1-menu-li .sec-7-col-1-menu-li-preview {
+  width: 20rem;
+  height: 20rem;
+  background: grey;
+}
+
+.section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul .sec-7-col-1-menu-li .sec-7-col-1-menu-li-preview-tour {
+  background: url(../img/kalanggaman5.jpg);
+}
+
+.section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul .sec-7-col-1-menu-li .sec-7-col-1-menu-li-preview {
+  background-position: center;
+  background-size: cover;
 }
 
 .footer {
@@ -1358,6 +1389,24 @@ body {
   .section4 .tag-line-container #tag-line-1 h2 {
     font-size: 1.5rem;
     font-weight: 300;
+  }
+  .section7 {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+  .section7 .sec-7-col-1-menu {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+  .section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul {
+    position: relative;
+    padding-left: 5rem;
+  }
+  .section7 .sec-7-col-1-menu .sec-7-col-1-menu-ul .sec-7-col-1-menu-li-links {
+    font-size: 2rem;
   }
 }
 

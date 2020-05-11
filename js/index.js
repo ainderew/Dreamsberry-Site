@@ -19,6 +19,7 @@ const tl4 = gsap.timeline({paused: true});
 const tl5 = gsap.timeline({paused: true});
 const tl6 = gsap.timeline({paused: true});
 const TLsection6 = gsap.timeline({paused: true});
+const TLmenuPreview = gsap.timeline({paused: true});
 
 let section2OffsetTop = 0;
 let section2OffsetHeight = 0;
@@ -100,6 +101,10 @@ tl6.fromTo(".sec-5-img",1,{x:"0%"},{x:"85%"})
 TLsection6.fromTo("#sec-6-counter",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"})
           .fromTo(".sec-6-tagline",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"},"-=.8");
 
+TLmenuPreview.fromTo(".sec-7-col-1-menu-li-preview",.3,{opacity:0,width:"0%",height:"0%",transformOrigin:"bottom"},{opacity:1,height:".5rem"})
+             .to(".sec-7-col-1-menu-li-preview",.6,{width:"20rem"})
+             .to(".sec-7-col-1-menu-li-preview",.6,{height:"20rem"})
+          
 const progressTween = () =>{
     const scrollPosition = (mainContainer.scrollTop + 200);
     const elPosition = (scrollPosition - section2OffsetTop);
@@ -291,7 +296,29 @@ carouselUpBtn.addEventListener("click",e=>{
 
 
 
+//bottom menu
+const menuPreview = document.querySelector(".sec-7-col-1-menu-li-preview");
+const menuOptions = document.querySelectorAll(".sec-7-col-1-menu-li-links");
 
+const menuPreviewLogic = (index) =>{
+    setTimeout(()=>{
+        if (index===0){
+            menuPreview.classList.toggle("sec-7-col-1-menu-li-preview-tour")
+        }
+    },600)
+    console.log(index);
+} 
+
+menuOptions.forEach((el,index)=>{
+    el.addEventListener("mouseenter",()=>{
+        menuPreviewLogic(index);
+        TLmenuPreview.play();
+    })
+    el.addEventListener("mouseleave",()=>{
+        menuPreviewLogic(index);
+        TLmenuPreview.reverse();
+    })
+})
 
 
 
