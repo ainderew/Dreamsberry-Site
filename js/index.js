@@ -5,6 +5,8 @@ const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
 const section5 = document.querySelector(".section5");
 const section6 = document.querySelector(".section6");
+const section7 = document.querySelector(".section7");
+const section8 = document.querySelector(".section8");
 const carouselUL = document.querySelector(".carousel-track");
 const slides = Array.from(carouselUL.children);
 const carouselIndicator = document.querySelectorAll(".carousel-indicator")
@@ -20,6 +22,8 @@ const tl5 = gsap.timeline({paused: true});
 const tl6 = gsap.timeline({paused: true});
 const TLsection6 = gsap.timeline({paused: true});
 const TLmenuPreview = gsap.timeline({paused: true});
+const TLsection7 = gsap.timeline({paused: true});
+// const TLsection7Cover = gsap.timeline({paused: true});
 
 let section2OffsetTop = 0;
 let section2OffsetHeight = 0;
@@ -55,6 +59,8 @@ const userScroll = () =>{
         section3OffsetHeight = section3.offsetHeight
         section5OffsetTop = section5.offsetTop
         section5OffsetHeight = section5.offsetHeight
+        section7OffsetTop = section7.offsetTop
+        section7OffsetHeight = section7.offsetHeight
         console.log(section2OffsetHeight) 
     },1500)
 }
@@ -101,9 +107,20 @@ tl6.fromTo(".sec-5-img",1,{x:"0%"},{x:"85%"})
 TLsection6.fromTo("#sec-6-counter",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"})
           .fromTo(".sec-6-tagline",1,{opacity:0,y:200},{opacity:1,y:0,ease:"back"},"-=.8");
 
-TLmenuPreview.fromTo(".sec-7-col-1-menu-li-preview",.3,{opacity:0,width:"0%",height:"0%",transformOrigin:"bottom"},{opacity:1,height:".5rem"})
-             .to(".sec-7-col-1-menu-li-preview",.6,{width:"20rem"})
-             .to(".sec-7-col-1-menu-li-preview",.6,{height:"20rem"})
+TLmenuPreview.fromTo(".sec-8-col-1-menu-li-preview",.3,{opacity:0,width:"0%",height:"0%",transformOrigin:"bottom"},{opacity:1,height:".2rem"})
+             .to(".sec-8-col-1-menu-li-preview",.3,{width:"20rem"})
+             .to(".sec-8-col-1-menu-li-preview",.5,{height:"20rem"});
+
+TLsection7.fromTo("#text-path-7",{x:"1500"},{x:0})
+          .fromTo("#text-path-7",{scale:1},{scale:60,force3D:false})
+          .to(".section7",{background:"url(../img/kalanggamanBG.png)"})
+
+        //   .to(".section7",{scale:20},{scale:1})
+
+
+
+          
+         
           
 const progressTween = () =>{
     const scrollPosition = (mainContainer.scrollTop + 200);
@@ -127,6 +144,15 @@ const section5Progress= () =>{
     const durationDistance = (window.innerHeight + section5OffsetHeight);
     const currentProgress = (elPosition / durationDistance);
     tl6.progress(currentProgress)
+    
+}
+const section7Progress= () =>{
+    let scrollPosition = (mainContainer.scrollTop + 600);
+    const elPosition = (scrollPosition - section7OffsetTop);
+    const durationDistance = (window.innerHeight + section7OffsetHeight);
+    const currentProgress = (elPosition / durationDistance);
+    TLsection7.progress(currentProgress)
+    // TLsection7Cover.progress(currentProgress)
     
 }
 
@@ -213,6 +239,19 @@ let section6Callback = (entries,observer)=>{
     });
 }
 
+let section7Callback = (entries,observer)=>{
+    entries.forEach(entry =>{
+        if (entry.intersectionRatio > 0){
+            gsap.ticker.add(section7Progress);
+            console.log("should start")
+        }else{
+            gsap.ticker.remove(section7Progress);
+            // tl5.reverse();
+        }
+    });
+}
+
+
 
 intersectionObserver(callBack,section2)
 intersectionObserver(callBack2,sec2UpperRight);
@@ -220,6 +259,7 @@ intersectionObserver(callBack3,counter);
 intersectionObserver(section3ImageCallback,section3);
 intersectionObserver(section5ImageCallback,section5);
 intersectionObserver(section6Callback,section6CounterText);
+intersectionObserver(section7Callback,section7);
 
 
 
@@ -297,15 +337,16 @@ carouselUpBtn.addEventListener("click",e=>{
 
 
 //bottom menu
-const menuPreview = document.querySelector(".sec-7-col-1-menu-li-preview");
-const menuOptions = document.querySelectorAll(".sec-7-col-1-menu-li-links");
+const menuPreview = document.querySelector(".sec-8-col-1-menu-li-preview");
+const menuOptions = document.querySelectorAll(".sec-8-col-1-menu-li-links");
 
 const menuPreviewLogic = (index) =>{
     setTimeout(()=>{
         if (index===0){
-            menuPreview.classList.toggle("sec-7-col-1-menu-li-preview-tour")
+            menuPreview.classList.toggle("sec-8-col-1-menu-li-preview-tour")
+            
         }
-    },600)
+    },100)
     console.log(index);
 } 
 
@@ -320,5 +361,61 @@ menuOptions.forEach((el,index)=>{
     })
 })
 
+//navigation menu show on scroll up
+const siteNavBar = document.querySelector(".siteNavBar");
+let lastKnownScrollY = 0
+let currentScrollY = 0
+let ticking = false
+mainContainer.addEventListener("scroll",throttle(onScroll, 100))   
 
+function onScroll() {
+    currentScrollY = mainContainer.scrollTop
+    requestTick()
+}
+
+function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(update)
+    }
+    ticking = true
+}
+function update() {
+    if (currentScrollY < lastKnownScrollY) {
+      pin()
+    } else if (currentScrollY > lastKnownScrollY) {
+      unpin()
+    }
+    lastKnownScrollY = currentScrollY
+    ticking = false
+}
+function pin() {
+    if (siteNavBar.classList.contains("unpin")){
+        siteNavBar.classList.remove("unpin")
+        siteNavBar.classList.add("pin")
+    }
+    console.log("pin")
+}
+function unpin() {
+    console.log("unpin")
+    if (
+      siteNavBar.classList.contains("pin") ||
+      !siteNavBar.classList.contains("unpin")
+    ) {
+        siteNavBar.classList.remove("pin")
+        siteNavBar.classList.add("unpin")
+    }
+}
+
+function throttle (callback, limit) {
+    var tick = false;
+    return function () {
+      if (!tick) {
+        callback.call();
+        tick = true;
+        setTimeout(function () {
+          tick = false;
+        }, limit);
+      }
+    }
+  }
 

@@ -223,11 +223,11 @@ body{
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content:flex-end ;
+        justify-content:flex-end ; 
         background: white;
         grid-column: 1/3;
         grid-row: 1/2;
-    
+        transition: 300ms ease;
         
         #header-nav{
             display: flex;
@@ -773,23 +773,46 @@ body{
 .section7{
     width: 100%;
     height: 300vh;
+    background: #222222;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+   
+    #text-path-7{
+        background: url(../img/kalanggamanBG.png) no-repeat center center/cover;
+        background-attachment: fixed;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-size: 9rem;
+        font-weight: 900;
+        position: sticky;
+        top: 40%;
+        text-align: center;
+        
+    }
+    
+}
+.section8{
+    width: 100%;
+    height: 300vh;
     display: grid;
-    border: 1px solid red;
     grid-template-columns: .7fr 1fr;
-    .sec-7-col-1-menu{
+    background-attachment: fixed;
+    .sec-8-col-1-menu{
         grid-column: 1/2;
         background: black;
-        .sec-7-col-1-menu-ul{
+        .sec-8-col-1-menu-ul{
             position: sticky;
             top: 0;
             display: flex;
             flex-direction: column;
             padding-left: 10rem;
             padding-top: 3rem;
-            .sec-7-col-1-menu-li{
+            .sec-8-col-1-menu-li{
                 list-style-type: none;
                 margin: 1rem 0;
-                .sec-7-col-1-menu-li-links{
+                .sec-8-col-1-menu-li-links{
                     text-decoration: none;
                     font-size: 3rem;
                     font-weight: 900;
@@ -798,27 +821,75 @@ body{
                     // letter-spacing: .2rem;
                     transition: 300ms;
                 }
-                .sec-7-col-1-menu-li-links:hover{
+                .sec-8-col-1-menu-li-links:hover{
                     color: white;
                 }
-                .sec-7-col-1-menu-li-preview{
+                .sec-8-col-1-menu-li-preview{
                     width: 20rem;
                     height: 20rem;
                     background: grey;
                 }
-                .sec-7-col-1-menu-li-preview-tour{
+                .sec-8-col-1-menu-li-preview-tour{
                     background: url(../img/kalanggaman5.jpg)
                 }
-                // .sec-7-col-1-menu-li-preview-tour{
+                // .sec-8-col-1-menu-li-preview-tour{
 
                 // }
-                // .sec-7-col-1-menu-li-preview-tour{
+                // .sec-8-col-1-menu-li-preview-tour{
 
                 // }
-                .sec-7-col-1-menu-li-preview{
+                .sec-8-col-1-menu-li-preview{
                     background-position: center;
                     background-size: cover;
                 }
+            }
+        }
+    }
+    .sec-8-col-2-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+        grid-auto-rows: 450px;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .main-article{
+        grid-row: span 1/auto;
+        grid-column: span 5 /auto;
+        text-decoration: none;
+    }
+    .secondary-article{
+        grid-row: span 1/auto;
+        grid-column: span 3/auto;
+        background: green;
+    }
+    .sub-article{
+        grid-row: span 1/auto;
+        grid-column: span 2/auto;
+        background: green;
+    }
+
+    .sec-8-col-2-article1{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr .7fr;
+        color: black;
+        .article1-img{
+            grid-column: 1/2;
+            background: url("../img/kalanggaman5.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+        .article-1-text-container{
+            padding: 0 0 0 1rem;
+            .article-1-title{
+                font-size: 1.5rem;
+            }
+            .article-1-subheading{
+                font-size: 1rem;
+                font-weight: 400;
+                margin-top: 1rem;
+                
             }
         }
     }
@@ -1034,22 +1105,24 @@ body{
         }
        
     }
-    .section7{
+    .section8{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        .sec-7-col-1-menu{
+        .sec-8-col-1-menu{
             grid-row: 2/3;
-            .sec-7-col-1-menu-ul{
+            .sec-8-col-1-menu-ul{
                 position: relative;
                 padding-left: 5rem;
-                .sec-7-col-1-menu-li-links{
+                .sec-8-col-1-menu-li-links{
                     font-size: 2rem;
                 }
             }
         }
     }
 
-
+    .footer{
+        grid-template-columns: 1fr;
+    }
 }
 
 .fixed{
@@ -1057,6 +1130,17 @@ body{
     top: 250px;
 }
 
+.pin{
+    position: fixed;
+    height: auto!important;
+    transform: translateY(0)
+}
+.unpin{
+    display: none;
+    position: fixed;
+    height: auto!important;
+    transform: translateY(-5rem);
+}
 .progress-container{
     position: fixed;
     right: 0;
