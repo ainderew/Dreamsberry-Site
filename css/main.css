@@ -1023,11 +1023,10 @@ body {
 .section7 {
   width: 100%;
   height: 300vh;
-  background: #222222;
 }
 
-.section7 #text-path-7 {
-  background: url(../img/kalanggamanBG.png) no-repeat center center/cover;
+.section7 .text-path-7 {
+  background: url(../img/kalanggamanBG.png) no-repeat center center/contain;
   background-attachment: fixed;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1038,6 +1037,10 @@ body {
   position: sticky;
   top: 40%;
   text-align: center;
+}
+
+.section7 .kalanggaman-text {
+  top: 20%;
 }
 
 .section8 {
@@ -1054,7 +1057,7 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-  background: black;
+  background: #222222;
 }
 
 .section8 .sec-8-col-1-menu .sec-8-col-1-menu-ul {

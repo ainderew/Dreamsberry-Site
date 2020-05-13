@@ -111,9 +111,11 @@ TLmenuPreview.fromTo(".sec-8-col-1-menu-li-preview",.3,{opacity:0,width:"0%",hei
              .to(".sec-8-col-1-menu-li-preview",.3,{width:"20rem"})
              .to(".sec-8-col-1-menu-li-preview",.5,{height:"20rem"});
 
-TLsection7.fromTo("#text-path-7",{x:"1500"},{x:0})
-          .fromTo("#text-path-7",{scale:1},{scale:60,force3D:false})
-          .to(".section7",{background:"url(../img/kalanggamanBG.png)"})
+TLsection7.fromTo(".kalanggaman-text",1,{x:"1500"},{x:-1500})
+          .fromTo(".island-text",1,{x:"-1500"},{x:1500},"-=1")
+          
+            
+          
 
         //   .to(".section7",{scale:20},{scale:1})
 
