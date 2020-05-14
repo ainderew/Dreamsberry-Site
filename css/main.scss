@@ -213,20 +213,15 @@ body{
 .section1{
     width: 100vw;
     height: 100vh;
-    display: grid;
-    grid-template-columns: .16fr 2fr;
-    grid-template-rows: .2fr 3fr;
-
+    
     .siteNavBar{
         z-index: 1;
         width: 100%;
-        height: 100%;
+        height: 10%;
         display: flex;
         align-items: center;
-        justify-content:flex-end ; 
-        background: white;
-        grid-column: 1/3;
-        grid-row: 1/2;
+        justify-content:flex-end; 
+        position: fixed;
         transition: 300ms ease;
         
         #header-nav{
@@ -293,9 +288,8 @@ body{
     
     }
     .section1-carousel{
-    //    border: 1px red solid; 
       width: 100%;
-      height: 80%;
+      height: 85%;
       position:relative;
       grid-row: 2/3;
       grid-column: 2/3;

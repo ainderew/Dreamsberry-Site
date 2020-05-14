@@ -28,12 +28,21 @@ const TLsection7 = gsap.timeline({paused: true});
 let section2OffsetTop = 0;
 let section2OffsetHeight = 0;
 
-// function offset(el) {
-//     var rect = el.getBoundingClientRect(),
-//     scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-// }
+
+
+//firebase Database
+const config = {
+    apiKey: "AIzaSyDDCZGVH3tWjrd1M5fEqcEXczjCkT0IKYM",
+    authDomain: "kalanggaman-cb1fd.firebaseapp.com",
+    databaseURL: "https://kalanggaman-cb1fd.firebaseio.com",
+    storageBucket: "kalanggaman-cb1fd.appspot.com"
+  };
+  firebase.initializeApp(config);
+
+  // Get a reference to the database service
+  const database = firebase.database();
+
+
 
 burgerBtn.addEventListener("click",()=>{
     gsap.to("#phoneNavBar",{x:"-100%"})
@@ -420,4 +429,6 @@ function throttle (callback, limit) {
       }
     }
   }
+
+
 

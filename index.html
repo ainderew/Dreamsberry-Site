@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap">
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
     <script src="https://kit.fontawesome.com/82758b010a.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -55,7 +57,7 @@
         </header>
 
         <section class="section1">
-            <header class = "siteNavBar absolute">
+            <header class = "siteNavBar">
                 <nav id="header-nav">
                     <a href="#mainCont" id="nav-logo-container"><h1 id="nav-logo">DreamsBerry</h1></a>
                     <ul id="nav-ul">
@@ -67,9 +69,6 @@
                     <a href=""id = "nav-reserve">Reserve Now</a>
                 </nav>
             </header>
-            <div class="scroller">
-
-            </div>
             <div class="section1-carousel">
                <div class="carousel-track-container">
                     <ul class="carousel-track">
@@ -320,8 +319,8 @@
         
     </div>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-    <script src="./js/countUp.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/countUp.js" defer></script>
+    <script src="./js/index.js" defer></script>
    
 </body>
 </html>
