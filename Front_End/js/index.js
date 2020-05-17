@@ -30,20 +30,6 @@ let section2OffsetHeight = 0;
 
 
 
-//firebase Database
-const config = {
-    apiKey: "AIzaSyDDCZGVH3tWjrd1M5fEqcEXczjCkT0IKYM",
-    authDomain: "kalanggaman-cb1fd.firebaseapp.com",
-    databaseURL: "https://kalanggaman-cb1fd.firebaseio.com",
-    storageBucket: "kalanggaman-cb1fd.appspot.com"
-  };
-  firebase.initializeApp(config);
-
-  // Get a reference to the database service
-  const database = firebase.database();
-
-
-
 burgerBtn.addEventListener("click",()=>{
     gsap.to("#phoneNavBar",{x:"-100%"})
     section1.addEventListener("click",()=>{
@@ -428,6 +414,17 @@ function throttle (callback, limit) {
         }, limit);
       }
     }
+  }
+
+
+  const tester = async () =>{
+      const response = await fetch("http://localhost:3000/reserve",{
+          method: "GET",
+          mode: "cors"
+      })
+        .then(response => response.json())
+        .then(data => console.log(data));
+
   }
 
 

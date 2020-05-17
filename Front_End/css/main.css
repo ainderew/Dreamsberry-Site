@@ -483,23 +483,12 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 3fr 1fr;
       grid-template-columns: 3fr 1fr;
   position: relative;
-}
-
-.section1 .section1-carousel .carousel-track .carousel-slide .carousel-img .carousel-1-left .carousel-1-header {
-  color: white;
-  font-size: calc(1rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
-  margin: 10% 0 0 10%;
-  font-weight: 200;
-  line-height: calc(1rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
-}
-
-.section1 .section1-carousel .carousel-track .carousel-slide .carousel-img .carousel-1-left .carousel-1-header #header-span {
-  font-weight: 500;
 }
 
 .section1 .section1-carousel .section-1-info {

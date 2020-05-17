@@ -1,0 +1,33 @@
+{
+  "name": "kalanggaman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./Server/server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.14"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ainderew/Dreamsberry-Site.git"
+  },
+  "author": "Andrew Pinon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ainderew/Dreamsberry-Site/issues"
+  },
+  "homepage": "https://github.com/ainderew/Dreamsberry-Site#readme"
+}

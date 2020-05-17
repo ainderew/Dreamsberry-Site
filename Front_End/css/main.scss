@@ -372,24 +372,11 @@ body{
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
+                background-attachment: fixed;
                 display: grid;
                 grid-template-columns: 3fr 1fr;
                 position: relative;
                 
-                .carousel-1-left{
-                    // background: pink;
-                    .carousel-1-header{
-                        color: white;
-                        font-size: calc(1rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
-                        margin: 10% 0 0 10%;
-                        font-weight: 200;
-                        line-height: calc(1rem + (36 - 15) * ((100vw - 200px) / (1600 - 200)));
-                        #header-span{
-                            font-weight: 500;
-                        }
-                    }
-                }
-               
             }
           }
         }
