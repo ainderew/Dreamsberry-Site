@@ -11,8 +11,8 @@ mongoose.connect("mongodb+srv://kalanggaman:kalanggaman@cluster0-ucrf4.mongodb.n
 describe("saving test",()=>{
     it("saving record to database",function(done){
         let guest1 = new GuestReservation({
-            name: "Andrew",
-            phoneNumber: 0917546
+            name: "Manuelene",
+            email: "ladjfa@gmail.com"
         });
 
         guest1.save().then(function(){

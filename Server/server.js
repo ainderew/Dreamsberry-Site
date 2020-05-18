@@ -7,12 +7,13 @@ DB_CONNECT();
 
 //Import Routes
 const reserveRoute = require("../Routes/Reserve");
+const recordsRoute = require("../Routes/Records");
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/reserve", reserveRoute);
-    
+app.use("/records", recordsRoute);
 
 app.get("/",(req,res) => {
     res.send("Home");

@@ -63,7 +63,7 @@
                     <ul id="nav-ul">
                         <li class="nav-li"><a class="nav-li-link" href="">Home</a></li>
                         <li class="nav-li"><a class="nav-li-link" href="">Contact us</a></li>
-                        <li class="nav-li"><a class="nav-li-link" href="">About</a></li>
+                        <li class="nav-li"><a class="nav-li-link" href="./Database.html">About</a></li>
                         <li class="nav-li"><a class="nav-li-link" onclick="tester()" href="#">Blogs</a></li>
                     </ul>
                     <a href=""id = "nav-reserve">Reserve Now</a>
@@ -259,6 +259,17 @@
                     </div>
                 </a>
             </div>
+        </section>
+        <section class="section9">
+            <form method = "POST" action="http://localhost:3000/records">
+                <label for="name">Name</label>
+                <input type="text" name="name" id = "nameInput">
+                <label for="email">Email</label>
+                <input type="text" name="email" id = "emailInput">
+                <label for="number">Phone Number</label>
+                <input type="number" name="phoneNumber" id = "numberInput">
+                <button type="submit">Submit</button>
+            </form>
         </section>
 
         <footer class="footer">

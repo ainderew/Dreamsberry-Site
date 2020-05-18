@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr .2fr 3fr;
+      grid-template-rows: 1fr .2fr 3fr;
+}
+
+.header-container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  border: blue solid 2px;
+}
+
+.data-container-labels {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.data-container-labels h1 {
+  font-size: 1rem;
+}
+
+.data-container-labels,
+.entry {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: .2fr 1.5fr 2fr 1fr .7fr;
+      grid-template-columns: .2fr 1.5fr 2fr 1fr .7fr;
+}
+
+.col {
+  margin: auto;
+}
+
+.data-container {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
+.data-container .data-list {
+  width: 100%;
+}
+
+.data-container .data-list .entry {
+  height: 2rem;
+}
+
+.data-container .data-list .entry h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+/*# sourceMappingURL=database_Page.css.map */
